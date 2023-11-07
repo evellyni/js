@@ -2,11 +2,11 @@
 
 <head>
     <title>Titulo</title>
+    <script src="myscript.js" type="text/javascript"></script>
     <script>
         function trabalhandoNome() {
-            /* explicando variáveis */
-            var nome = prompt("Diga um nome", "Wanderson")
-            var sobrenome = prompt("Diga um sobrenome", "Rigo")
+            var nome = prompt("Diga um nome", "Evellyn")
+            var sobrenome = prompt("Diga um sobrenome", "Pinto")
             var nomeCompleto = nome + " " + sobrenome
             var tamanhoDoNome = nomeCompleto.length
             alert("[" + nomeCompleto + "]" +
@@ -28,15 +28,28 @@
             var total = parseFloat(num1) + num2
             alert("total = " + total)
         }
+        function maiuscula() {
+            var email = gebi("idEmail").value;
+            var emailMaisculas = email.toUpperCase()
+            gebi("idEmail").value = email.toUpperCase();
+        }
 
         function validar() {
             var email = gebi("idEmail").value;
             var senha = gebi("idSenha").value;
+
+            if (wmail.length < 1) {
+                alert("Preencha o e-mail")
+                return
+            }
+
+            if (wmail.length < 1) {
+                alert("Preencha a senha")
+                return
+            }
+            alert("sucesso")
         }
-        function maiuscula() {
-            var email = gebi("idEmail").value;
-            gebi("idEmail").value = email.toUpperCase();
-        }
+
     </script>
     <script type="text/javascript" src="js/myscript.js"></script>
 </head>
@@ -44,11 +57,11 @@
 <body>
     <center>
         <h1>Validar</h1>
-        <form>
+        <form id="meuForm" action="http://jkorpela.fi/cgi-bin/acho.cgi">
             <fieldset align="center" style="width:270px">
                 <legend>Login:</legend>
-                Email: <input id="idEmail" type="text" onblur="maiuscula();"><br>
-                Senha: <input id="idSenha" type="password"><br>
+                Email: <input id="idEmail" name="email" type="email" onblur="maiuscula();"><br>
+                Senha: <input id="idSenha" name="senha" type="password"><br>
                 <input type="button" value="Enviar" onclick="validar();">
             </fieldset>
         </form>
