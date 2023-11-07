@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Javascript 01</title>
+    <script src="js/myscript.js" type="text/javascript"></script>
+    <link href="css/style.css">
+    <script>
+        alert("olá galera!")
+
+        function trocarTexto() {
+            var elemento = document.getElementById("frase")
+            var elementoNovo = document.getElementById("novaFrase").value
+            elemento.innerHTML = elementoNovo
+        }
+    </script>
+</head>
+
+<body>
+    <h1 ondblclick="mudarFrase()" id="frase">Olá Mundo!</h1>
+    <input id="novaFrase" type="text"><br>
+    <input id="botao" type="button" value="Trocar Frase" onclick="trocarTexto();"><br>
+    <a href="calculadora.html">Vai para Calculadora</a><br>
+    <a href="validar.html">Vai para Validar</a>
+</body>
+
+</html>
