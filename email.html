@@ -20,10 +20,11 @@
         title="Um email válidar!" 
         type="email" name="email" 
         id="idEmail" required>
-           
-        <input type="submit" value="Enviar" />
+         <input type="text" minlength="5" maxlength="12" pattern="[a-z]{5-12}" name="nome" id="idNome" required><br>
+         <textarea name="corpo" id="" cols="33" rows="7"
+         placeholder="O texto do seu e-mail." required></textarea><br>
+         <input type="submit" value="Enviar" />
     </form>
-
 
 </body>
 
