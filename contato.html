@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#idTelefone').inputmask('(99) 99999-9999')
+        })
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $('#idCPF').inputmask('999.999.999-99')
+        })
+    </script>
+
+    <script>
+        function validarEmail() {
+            var email = document.getElementById("idEmail").value
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                alert("Email inválido")
+                return
+            }
+        }
+ </script>
+</head>
+<body>
+
+    <a href="mailto:email@provedor.com.br?
+            &subject=Assundo do email
+            &cc=copia@provedor.com.br
+            &bcc=copiaoculta@provedor.com.br
+            &body=Olá galera">Enviar Email</a>
+
+    <a href="https://wa.me/5548999999999?
+            text=mensagem%20de%20hoje">
+        WhatsApp
+    </a>
+
+<form id="idForm" action="https://app.headlessforms.cloud/api/v1/form-submission/UF7YAmmfN8" method="POST">
+
+        Email: <input placeholder="nada@nada.com" title="Um email válido" type="email" name="email" id="idEmail" onblur="validarEmail()" required><br>
+
+        Nome: <input name="nome" placeholder="Ex: karyne" type="text" id="idNome" pattern="([a-z]{5,12})"><br>
+        <textarea name="corpo" id="" cols="30" rows="3" placeholder="O texto do seu e-mail" required></textarea><br>
+        CPF: <input type="text" id="idCPF" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br>
+        CEP: <input type="text" id="idCEP" name="cep" pattern="\d{5}-?\d{3}"><br>
+        Telefone: <input type="text" id="idTelefone" name="telefone" pattern="/^\([1-9]{2}\)[0-9]{4,5}-[0-9]{4}$/"><br>
+        Data: <input type="date" id="idData" name="data"><br>
+        Hora: <input type="time" id="idHora" name="hora"><br>
+        Placa: <input type="text" id="idPlaca" name="placa" pattern="^[a-zA-Z]{3}[0-9][A-Za-z0-9][0-9]{2}$"><br>
+        <input type="submit" value="Enviar"> 
+        
+
+    </form>
+
+</body>
+</html>
