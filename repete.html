@@ -1,21 +1,30 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Titulo</title>
-        <script>
-            function contar() {
-              for (var i = 0; i< 9; i++){            
-                
-                document.write(i + "<br>")
-           
+<!DOCTYPE html>m
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo</title>
+    <script>
+        function contar() {
+
+            var cars = ["fusca", "gol", "opala", "147"];
+            document.write(cars + "<br>")
+            var novoCarro = prompt("Diga um carro")
+            cars.push(novoCarro)
+
+            for (let index = cars.length - 1; index >= 0; index--) {
+                const car = cars[index];
+                document.write(car + "<br>")
             }
-            
-            }
-        </script>
-    </head>
+
+
+        }
+    </script>
+</head>
+
 <body>
-    <input type="button"
-    value="Enviar"
-    onclick="contar()">
+    <input type="button" value="Enviar" onclick="contar()">
 </body>
-</html>        
+
+</html>
